@@ -1,0 +1,54 @@
+﻿@using StronglyType.Models;
+@{
+    ViewData["Title"] = "SportsListView";
+}
+
+<h2>SportsListView</h2>
+
+<html>
+<head>
+    <meta name="viewport" content="sports" />
+    <title>Sports Detail</title>
+
+</head>
+<body>
+    <div>
+        <table class="table table-bordered table-responsive table hover">
+            <tr>
+                <th>SportsPersonId</th>
+                <th>SportPersonName</th>
+                <th>SportsName</th>
+                <th>DoesHeOrShePlayNow</th>
+            </tr>
+
+            @foreach (var sportData in Model)
+            {
+                if (sportData.doesHeOrShePlayNow)
+                {
+                    <tr style="background-color:yellow">
+                        <td>@sportData.sportsPersonId</td>
+                        <td>@sportData.sportPersonName</td>
+                        <td>@sportData.sportsName</td>
+                        <td>@sportData.doesHeOrShePlayNow</td>
+                    </tr>
+                }
+                else
+                {
+                    <tr style="background-color:red">
+                        <td>@sportData.sportsPersonId</td>
+                        <td>@sportData.sportPersonName</td>
+                        <td>@sportData.sportsName</td>
+                        <td>@sportData.doesHeOrShePlayNow</td>
+                    </tr>
+
+                }
+            }
+
+
+        </table>
+
+    </div>
+
+</body>
+
+</html>
